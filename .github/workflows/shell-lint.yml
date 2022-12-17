@@ -1,0 +1,17 @@
+---
+name: Shell
+
+"on":
+  workflow_call:
+
+jobs:
+  lint:
+    name: Lint code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Lint code with Shellcheck
+        uses: ludeeus/action-shellcheck@1.1.0

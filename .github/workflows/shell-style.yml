@@ -1,0 +1,19 @@
+---
+name: Shell
+
+"on":
+  workflow_call:
+
+jobs:
+  style:
+    name: Check style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run shfmt
+        uses: luizm/action-sh-checker@v0.5.0
+        with:
+          sh_checker_shellcheck_disable: true
