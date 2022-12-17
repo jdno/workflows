@@ -1,0 +1,27 @@
+---
+name: Shell
+
+"on":
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - "**.sh"
+
+jobs:
+  lint:
+    name: Lint
+
+    needs: filter
+
+    uses: ./.github/workflows/shell-lint.yml
+    if: ${{ needs.filter.outputs.changed == 'true' }}
+
+  style:
+    name: Style
+
+    needs: filter
+
+    uses: ./.github/workflows/shell-style.yml
+    if: ${{ needs.filter.outputs.changed == 'true' }}
