@@ -1,0 +1,24 @@
+---
+name: Rust
+
+"on":
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - "**.rs"
+      - "**.toml"
+
+jobs:
+  lint:
+    name: Lint
+    uses: ./.github/workflows/rust-lint.yml
+
+  style:
+    name: Style
+    uses: ./.github/workflows/rust-style.yml
+
+  test:
+    name: Test
+    uses: ./.github/workflows/rust-test.yml
