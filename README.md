@@ -1,6 +1,8 @@
-# 🚀 My Personal Template Repository
+# 🛠 Workflows
 
-This is a [template repository] for my personal projects.
+This repository contains a set of [reusable workflows] that I use in my personal
+projects. They are opinionated and tailored to my needs. Feel free to use them
+inspiration for your own workflows.
 
 ## License
 
@@ -17,4 +19,4 @@ Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
 dual licensed as above, without any additional terms or conditions.
 
-[template repository]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+[reusable workflows]: https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
