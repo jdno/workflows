@@ -5,6 +5,8 @@ name: Shell
   push:
     branches:
       - main
+    paths:
+      - "**.sh"
   pull_request:
     paths:
       - "**.sh"

@@ -5,6 +5,9 @@ name: YAML
   push:
     branches:
       - main
+    paths:
+      - "**.yml"
+      - "**.yaml"
   pull_request:
     paths:
       - "**.yml"
