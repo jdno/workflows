@@ -5,6 +5,9 @@ name: Rust
   push:
     branches:
       - main
+    paths:
+      - "**.rs"
+      - "**.toml"
   pull_request:
     paths:
       - "**.rs"
