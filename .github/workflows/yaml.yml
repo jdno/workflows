@@ -1,5 +1,5 @@
 ---
-name: Markdown
+name: YAML
 
 "on":
   pull_request:
@@ -20,7 +20,9 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v34
         with:
-          files: "**/*.md"
+          files: |
+            **/*.yml
+            **/*.yaml
 
       - name: List all changed files
         run: |
@@ -33,7 +35,7 @@ jobs:
 
     needs: filter
 
-    uses: ./.github/workflows/markdown-lint.yml
+    uses: ./.github/workflows/yaml-lint.yml
     if: ${{ needs.filter.outputs.changed == 'true' }}
 
   style:
@@ -41,5 +43,5 @@ jobs:
 
     needs: filter
 
-    uses: ./.github/workflows/markdown-style.yml
+    uses: ./.github/workflows/yaml-style.yml
     if: ${{ needs.filter.outputs.changed == 'true' }}

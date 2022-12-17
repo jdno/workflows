@@ -1,0 +1,17 @@
+---
+name: YAML
+
+"on":
+  workflow_call:
+
+jobs:
+  lint:
+    name: Lint code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run yamllint
+        uses: actionshub/yamllint@1.0.2
