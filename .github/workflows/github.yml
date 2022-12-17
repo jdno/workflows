@@ -1,0 +1,12 @@
+---
+name: GitHub
+
+"on":
+  push:
+    branches:
+      - main
+
+jobs:
+  labels:
+    name: Labels
+    uses: ./.github/workflows/sync-labels.yml
