@@ -13,6 +13,10 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
 
+    container:
+      image: xd009642/tarpaulin:develop-nightly
+      options: --security-opt seccomp=unconfined
+
     outputs:
       collect_coverage: ${{ steps.coverage.outputs.enable }}
 
@@ -38,18 +42,13 @@ jobs:
           fi
 
       - name: Run tests
-        uses: actions-rs/cargo@v1
         if: ${{ steps.coverage.outputs.enable != 'true' }}
-        with:
-          command: test
-          args: --verbose
+        run: cargo test --verbose
 
       - name: Run tests with test coverage
-        uses: actions-rs/tarpaulin@master
         if: ${{ steps.coverage.outputs.enable == 'true' }}
-        with:
-          args: --skip-clean
-          version: 0.20.0
+        run: |
+          cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out Xml
 
       - name: Upload to codecov.io
         uses: codecov/codecov-action@v3
