@@ -34,11 +34,11 @@ jobs:
         id: coverage
         run: |
           if [[ "${{ secrets.CODECOV_TOKEN }}" != "" ]]; then
-            echo "Enable collection of test coverage"
-            echo "::set-output name=enable::true"
+            echo "Run tests with test coverage"
+            echo "{enable}={true}" >> $GITHUB_OUTPUT
           else
             echo "Run tests without coverage"
-            echo "::set-output name=enable::false"
+            echo "{enable}={false}" >> $GITHUB_OUTPUT
           fi
 
       - name: Run tests
