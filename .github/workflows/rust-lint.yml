@@ -13,15 +13,12 @@ jobs:
     name: Lint code
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Install OpenSSL headers
-        run: sudo apt-get install libssl-dev
+    container:
+      image: ghcr.io/jdno/rust:latest
 
+    steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Set up Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
 
       - name: Cache build artifacts
         uses: swatinem/rust-cache@v2.2.0
