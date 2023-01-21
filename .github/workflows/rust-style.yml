@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/jdno/rust:latest
+      image: ghcr.io/jdno/rust:main
 
     steps:
       - name: Checkout code
