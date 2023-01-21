@@ -2,7 +2,7 @@ FROM rust:1.66.1
 
 RUN apt-get update && apt-get install -y \
     clang \
-    protoc \
+    protobuf-compiler \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Clippy and rustfmt
