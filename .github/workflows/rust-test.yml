@@ -27,7 +27,7 @@ jobs:
       - name: Install system dependencies
         run: |
           apt-get update
-          apt-get install -y clang
+          apt-get install -y clang protobuf-compiler
 
       - name: Cache build artifacts
         uses: swatinem/rust-cache@v2.2.0
