@@ -25,4 +25,4 @@ jobs:
 
       - name: Run terraform fmt
         working-directory: ${{ inputs.path }}
-        run: terraform fmt -recursive .
+        run: terraform fmt -check -recursive .
