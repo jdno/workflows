@@ -16,7 +16,7 @@ jobs:
         run: echo "No matching files - skipping check"
 
   style:
-    name: Style
+    name: Style / Check style
     runs-on: ubuntu-latest
 
     steps:
