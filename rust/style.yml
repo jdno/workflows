@@ -1,0 +1,16 @@
+style:
+  name: Check style
+  runs-on: ubuntu-latest
+
+  needs: detect-changes
+  if: needs.detect-changes.outputs.any_changed == 'true'
+
+  container:
+    image: ghcr.io/jdno/rust:main
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run Rustfmt
+      run: cargo fmt --all -- --check

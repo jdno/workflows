@@ -1,0 +1,19 @@
+lint:
+  name: Lint code
+  runs-on: ubuntu-latest
+
+  needs: detect-changes
+  if: needs.detect-changes.outputs.any_changed == 'true'
+
+  container:
+    image: ghcr.io/jdno/rust:main
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Cache build artifacts
+      uses: swatinem/rust-cache@v2.2.1
+
+    - name: Run Clippy
+      run: cargo clippy --all-targets --all-features -- -D warnings
