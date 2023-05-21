@@ -33,7 +33,7 @@ jobs:
             protobuf-compiler
 
       - name: Cache build artifacts
-        uses: swatinem/rust-cache@v2.3.0
+        uses: swatinem/rust-cache@v2.4.0
 
       - name: Determine whether to measure test coverage
         id: coverage
