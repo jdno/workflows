@@ -1,0 +1,7 @@
+---
+name: GitHub
+
+"on":
+  push:
+    branches:
+      - main
