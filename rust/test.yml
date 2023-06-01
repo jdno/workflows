@@ -30,7 +30,7 @@ test:
     - name: Upload to codecov.io
       uses: codecov/codecov-action@v3
       with:
-        token: {{ '${{ secrets.CODECOV_TOKEN }}' }}
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
