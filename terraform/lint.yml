@@ -1,0 +1,24 @@
+lint:
+  name: Lint code
+  runs-on: ubuntu-latest
+
+  needs: detect-changes
+  if: needs.detect-changes.outputs.any_changed == 'true'
+
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up TFLint
+      uses: terraform-linters/setup-tflint@v3
+
+    - name: Print TFLint version
+      run: tflint --version
+
+    - name: Init TFLint
+      working-directory: ${{ inputs.path }}
+      run: tflint --init
+
+    - name: Run TFLint
+      working-directory: ${{ inputs.path }}
+      run: tflint -f compact

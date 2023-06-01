@@ -1,0 +1,15 @@
+lint:
+  name: Lint code
+  runs-on: ubuntu-latest
+
+  needs: detect-changes
+  if: needs.detect-changes.outputs.any_changed == 'true'
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Ansible Lint
+      uses: ansible-community/ansible-lint-action@v6.16.0
+      with:
+        path: "ansible"
