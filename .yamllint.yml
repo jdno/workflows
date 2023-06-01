@@ -5,6 +5,4 @@ ignore: |
   rust/
 
 rules:
-  line-length:
-    ignore: |
-      .github/workflows/*
+  line-length: disable

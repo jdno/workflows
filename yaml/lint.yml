@@ -1,0 +1,13 @@
+lint:
+  name: Lint code
+  runs-on: ubuntu-latest
+
+  needs: detect-changes
+  if: needs.detect-changes.outputs.any_changed == 'true'
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run yamllint
+      uses: actionshub/yamllint@v1.7.1
