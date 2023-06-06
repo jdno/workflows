@@ -4,5 +4,22 @@
 
   "assignees": ["jdno"],
   "reviewers": ["jdno"],
-  "semanticCommits": "disabled"
+
+  "labels": ["C-dependency"],
+  "semanticCommits": "disabled",
+
+  "github-actions": {
+    "fileMatch": [
+      "ansible/*.yml",
+      "github/*.yml",
+      "json/*.yml",
+      "markdown/*.yml",
+      "rust/*.yml",
+      "shell/*.yml",
+      "terraform/*.yml",
+      "typescript/*.yml",
+      "yaml/*.yml"
+    ],
+    "labels": ["L-github"]
+  }
 }
