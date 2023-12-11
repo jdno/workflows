@@ -8,18 +8,16 @@
   "labels": ["C-dependency"],
   "semanticCommits": "disabled",
 
-  "github-actions": {
-    "fileMatch": [
-      "ansible/*.yml",
-      "github/*.yml",
-      "json/*.yml",
-      "markdown/*.yml",
-      "rust/*.yml",
-      "shell/*.yml",
-      "terraform/*.yml",
-      "typescript/*.yml",
-      "yaml/*.yml"
-    ],
-    "labels": ["L-github"]
-  }
+  "pre-commit": {
+    "enabled": true
+  },
+
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^[\\w]+/*.yml$"],
+      "matchStrings": ["uses: (?<depName>.*?)@(?<currentValue>.*?)$"],
+      "datasourceTemplate": "github-releases"
+    }
+  ]
 }
