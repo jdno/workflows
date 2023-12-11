@@ -8,16 +8,8 @@
   "labels": ["C-dependency"],
   "semanticCommits": "disabled",
 
-  "pre-commit": {
-    "enabled": true
-  },
-
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": ["^[\\w]+/*.yml$"],
-      "matchStrings": ["uses: (?<depName>.*?)@(?<currentValue>.*?)$"],
-      "datasourceTemplate": "github-releases"
-    }
-  ]
+  "github-actions": {
+    "fileMatch": ["^[\\w]+/*.yml"],
+    "labels": ["L-github"]
+  }
 }
