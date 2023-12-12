@@ -10,7 +10,7 @@ lint:
       uses: actions/checkout@v4
 
     - name: Set up TFLint
-      uses: terraform-linters/setup-tflint@v3
+      uses: terraform-linters/setup-tflint@v4
 
     - name: Print TFLint version
       run: tflint --version
