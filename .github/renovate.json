@@ -9,7 +9,7 @@
   "semanticCommits": "disabled",
 
   "github-actions": {
-    "fileMatch": ["^[\\w]+/*.yml"],
+    "fileMatch": ["^[\\w]+\\/[\\w]+\\.yml$"],
     "labels": ["L-github"]
   }
 }
