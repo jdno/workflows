@@ -7,7 +7,7 @@ security:
 
   steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Run tfsec
       uses: aquasecurity/tfsec-pr-commenter-action@v1.3.1
