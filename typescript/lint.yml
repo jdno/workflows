@@ -10,7 +10,7 @@ lint:
       uses: actions/checkout@v3
 
     - name: Set up Node
-      uses: actions/setup-node@v3.6.0
+      uses: actions/setup-node@v3.8.2
       with:
         cache: npm
         node-version: 16
