@@ -5,3 +5,4 @@ name: GitHub
   push:
     branches:
       - main
+  workflow_dispatch:
