@@ -14,7 +14,7 @@ test:
       uses: actions/checkout@v4
 
     - name: Cache build artifacts
-      uses: swatinem/rust-cache@v2.7.3
+      uses: swatinem/rust-cache@v2.7.5
 
     - name: Run tests with test coverage
       run: |
