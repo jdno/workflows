@@ -10,4 +10,4 @@ lint:
       uses: actions/checkout@v4
 
     - name: Run yamllint
-      uses: actionshub/yamllint@v1.8.2
+      uses: actionshub/yamllint@v1.8.3
