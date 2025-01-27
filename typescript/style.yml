@@ -10,7 +10,7 @@ style:
       uses: actions/checkout@v4
 
     - name: Set up Node
-      uses: actions/setup-node@v4.1.0
+      uses: actions/setup-node@v4.2.0
       with:
         cache: npm
         node-version: 16
