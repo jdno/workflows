@@ -7,7 +7,7 @@ lint:
 
   steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Set up TFLint
       uses: terraform-linters/setup-tflint@v4
